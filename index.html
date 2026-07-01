@@ -39,6 +39,18 @@
 
 </head>
 
+<!-- ============================= -->
+<!-- LIGHTBOX -->
+<!-- ============================= -->
+
+<div id="lightbox">
+
+    <span id="closeLightbox">✕</span>
+
+    <img id="lightboxImg">
+
+</div>
+
 <body>
 
 <!-- ============================= -->
@@ -172,9 +184,11 @@
     <!-- THAY ẢNH -->
     <img
         id="discImage"
-        src="assets/images/disc.png"
-        alt="Disc">
+        src="assets/images/disc.jpg"
+        loading="lazy"
+        decoding="async"
 
+        alt="disc">
 </div>
 
         <div class="music-info">
@@ -206,101 +220,6 @@
             <button id="nextSong">⏭</button>
 
         </div>
-
-    </div>
-
-</section>
-
-<!-- ========================================= -->
-<!-- LOVE LETTER -->
-<!-- ========================================= -->
-
-<section class="letter" id="letter">
-
-    <h2>💌 Gửi em...</h2>
-
-    <div class="letter-paper">
-
-        <p id="letterText">
-
-            Cảm ơn em vì đã xuất hiện trong cuộc đời Khang.<br><br>
-
-            Có những ngày rất bình thường, nhưng chỉ cần có em thì mọi thứ đều trở nên đặc biệt hơn.<br><br>
-
-            Khang không hứa sẽ hoàn hảo, nhưng Khang hứa sẽ luôn cố gắng trở thành người tốt hơn vì em.<br><br>
-
-            Hy vọng rằng sau này, chúng ta vẫn sẽ cùng nhau đi qua thật nhiều mùa xuân, mùa hạ, mùa thu và mùa đông nữa. ❤️<br><br>
-
-            <strong>Yêu em rất nhiều!</strong>
-
-        </p>
-
-    </div>
-
-</section>
-
-<!-- ========================================= -->
-<!-- GALLERY -->
-<!-- ========================================= -->
-
-<!-- ========================================= -->
-<!-- LOVE ALBUM -->
-<!-- ========================================= -->
-
-<section class="album reveal" id="gallery">
-
-    <h2>📖 Album ❤️ </h2>
-
-    <p class="album-sub">
-
-        Những ảnh của vợ yêu ❤️
-
-    </p>
-
-    <div class="album-container">
-
-        <button id="prevPhoto" class="album-btn">
-
-            ❮
-
-        </button>
-
-        <div class="album-card">
-
-            <img
-                id="albumImage"
-                src="assets/images/1.jpg"
-                alt="Album">
-
-            <h3 id="albumTitle">
-
-                Tình yêu nhỏ❤️
-
-            </h3>
-
-            <p id="albumDesc">
-
-                Đây là nơi mình sẽ ghi chú cho từng bức ảnh.
-
-            </p>
-
-            <div class="album-footer">
-
-                <span id="albumPage">
-
-                    1 / 26
-
-                </span>
-
-            </div>
-
-        </div>
-
-        <button id="nextPhoto" class="album-btn">
-
-            ❯
-
-        </button>
 
     </div>
 
@@ -357,6 +276,98 @@
     </div>
 
 </section>
+
+<!-- ========================================= -->
+<!-- LOVE LETTER -->
+<!-- ========================================= -->
+
+<section class="letter" id="letter">
+
+    <h2>💌 Gửi em...</h2>
+
+    <div class="letter-paper">
+
+        <p id="letterText">
+
+            Cảm ơn em vì đã xuất hiện trong cuộc đời Khang.<br><br>
+
+            Có những ngày rất bình thường, nhưng chỉ cần có em thì mọi thứ đều trở nên đặc biệt hơn.<br><br>
+
+            Khang không hứa sẽ hoàn hảo, nhưng Khang hứa sẽ luôn cố gắng trở thành người tốt hơn vì em.<br><br>
+
+            Hy vọng rằng sau này, chúng ta vẫn sẽ cùng nhau đi qua thật nhiều mùa xuân, mùa hạ, mùa thu và mùa đông nữa. ❤️<br><br>
+
+            <strong>Yêu em rất nhiều!</strong>
+
+        </p>
+
+    </div>
+
+</section>
+
+<!-- ========================================= -->
+<!-- LOVE ALBUM -->
+<!-- ========================================= -->
+
+<section class="album reveal" id="gallery">
+
+    <h2>📖 Album ❤️ </h2>
+
+    <p class="album-sub">
+
+        Những ảnh của vợ yêu ❤️
+
+    </p>
+
+    <div class="album-container">
+
+        <button id="prevPhoto" class="album-btn">
+
+            ❮
+
+        </button>
+
+        <div class="album-card">
+
+            <img
+            
+                id="albumImage"
+                src="assets/images/1.webp"
+                loading="lazy"
+                decoding="async"
+
+                alt="">
+                
+            <h3 id="albumTitle">
+
+                Tình yêu nhỏ❤️
+
+            </h3>
+
+            <p id="albumDesc">
+
+                Đây là nơi mình sẽ ghi chú cho từng bức ảnh.
+
+            </p>
+
+            <div class="album-footer">
+
+                <span id="albumPage"> 1 / 26 </span>
+
+            </div>
+
+        </div>
+
+        <button id="nextPhoto" class="album-btn">
+
+            ❯
+
+        </button>
+
+    </div>
+
+</section>
+
 
 <!-- ========================================= -->
 <!-- THANK YOU -->
@@ -432,10 +443,15 @@ Made with ❤️ by H_Kang & Yo_brnart
 <!-- JAVASCRIPT -->
 <!-- ============================= -->
 
-<audio id="bgMusic"></audio>
-<script src="js/main.js"></script>
-<script src="js/effects.js"></script>
-<script src="js/music.js"></script>
+<audio id="bgMusic" preload="metadata">
+
+    <source src="assets/music/Có Đôi Điều.mp3" type="audio/mpeg">
+
+</audio>
+
+<script defer src="js/main.js"></script>
+<script defer src="js/effects.js"></script>
+<script defer src="js/music.js"></script>
 
 </div>
 

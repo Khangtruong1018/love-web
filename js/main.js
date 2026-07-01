@@ -356,65 +356,222 @@ behavior:"smooth"
 }
 
 /* =========================================
-ALBUM V3 - 26 IMAGES
+ALBUM V3.1 PERFORMANCE
 ========================================= */
 
-const albumData = [];
+const TOTAL_IMAGES = 26;
 
-for(let i=1;i<=26;i++){
-    albumData.push({
-        img:`assets/images/${i}.jpg`,
-        title:`Tấm số ${i} ❤️`,
-        desc:`Một khoảnh khắc của vợ yêu #${i}`
-    });
-}
-
-let albumIndex = 0;
+let albumIndex = 1;
 
 const albumImage = document.getElementById("albumImage");
+albumImage.loading = "lazy";
+albumImage.decoding = "async";
+albumImage.style.transition = "opacity .3s ease";
 const albumTitle = document.getElementById("albumTitle");
 const albumDesc = document.getElementById("albumDesc");
 const albumPage = document.getElementById("albumPage");
 
-function loadAlbum(){
+const albumInfo = [
 
-    albumImage.style.opacity = 0;
+{title:"Tình yêu nhỏ ❤️",desc:"Khoảnh khắc số 1"},
+{title:"Nụ cười đáng yêu 🌸",desc:"Khoảnh khắc số 2"},
+{title:"Bé cưng ❤️",desc:"Khoảnh khắc số 3"},
+{title:"Đáng yêu quá 💖",desc:"Khoảnh khắc số 4"},
+{title:"Đi chơi cùng nhau ✨",desc:"Khoảnh khắc số 5"},
+{title:"Ảnh đẹp nhất ❤️",desc:"Khoảnh khắc số 6"},
+{title:"Nhớ mãi 🌸",desc:"Khoảnh khắc số 7"},
+{title:"Cười lên nào ❤️",desc:"Khoảnh khắc số 8"},
+{title:"Yêu em 💕",desc:"Khoảnh khắc số 9"},
+{title:"Happy ❤️",desc:"Khoảnh khắc số 10"},
+{title:"Kỷ niệm 11",desc:"Khoảnh khắc số 11"},
+{title:"Kỷ niệm 12",desc:"Khoảnh khắc số 12"},
+{title:"Kỷ niệm 13",desc:"Khoảnh khắc số 13"},
+{title:"Kỷ niệm 14",desc:"Khoảnh khắc số 14"},
+{title:"Kỷ niệm 15",desc:"Khoảnh khắc số 15"},
+{title:"Kỷ niệm 16",desc:"Khoảnh khắc số 16"},
+{title:"Kỷ niệm 17",desc:"Khoảnh khắc số 17"},
+{title:"Kỷ niệm 18",desc:"Khoảnh khắc số 18"},
+{title:"Kỷ niệm 19",desc:"Khoảnh khắc số 19"},
+{title:"Love Forever ❤️",desc:"Khoảnh khắc số 20"},
 
-    setTimeout(()=>{
+{title:"Love Forever ❤️",desc:"Khoảnh khắc số 20"},
 
-        albumImage.src = albumData[albumIndex].img;
-        albumTitle.innerText = albumData[albumIndex].title;
-        albumDesc.innerText = albumData[albumIndex].desc;
-        albumPage.innerText = `${albumIndex+1} / 26`;
+{title:"Kỷ niệm 21 ❤️",desc:"Khoảnh khắc số 21"},
 
-        albumImage.style.opacity = 1;
+{
+title:"Kỷ niệm 22 ❤️",
+desc:"Khoảnh khắc số 22"
+},
 
-    },150);
+{
+title:"Kỷ niệm 23 ❤️",
+desc:"Khoảnh khắc số 23"
+},
+
+{
+title:"Kỷ niệm 24 ❤️",
+desc:"Khoảnh khắc số 24"
+},
+
+{
+title:"Kỷ niệm 25 ❤️",
+desc:"Khoảnh khắc số 25"
+},
+
+{
+title:"Love Forever ❤️",
+desc:"Khoảnh khắc số 26"
 }
 
-document.getElementById("nextPhoto").onclick = () => {
+];
 
-    albumIndex++;
+function loadAlbum(){
 
-    if(albumIndex >= albumData.length){
-        albumIndex = 0;
-    }
+const loader = new Image();
 
-    loadAlbum();
+loader.loading="lazy";
+
+loader.decoding="async";
+
+loader.src=`assets/images/${albumIndex}.webp`;
+
+loader.onload = () => {
+
+    albumImage.style.opacity = "0";
+
+    requestAnimationFrame(() => {
+
+        albumImage.src = loader.src;
+
+        albumImage.decode().catch(()=>{}).finally(()=>{
+
+            albumImage.style.opacity = "1";
+
+        });
+
+    });
+
 };
 
-document.getElementById("prevPhoto").onclick = () => {
+albumTitle.innerHTML=albumInfo[albumIndex-1].title;
 
-    albumIndex--;
+albumDesc.innerHTML=albumInfo[albumIndex-1].desc;
 
-    if(albumIndex < 0){
-        albumIndex = albumData.length - 1;
-    }
+albumPage.innerHTML=`${albumIndex} / ${TOTAL_IMAGES}`;
 
-    loadAlbum();
+preloadNext();
+
+}
+
+function preloadNext(){
+
+const next=new Image();
+
+let index=albumIndex+1;
+
+if(index>TOTAL_IMAGES){
+
+index=1;
+
+}
+
+next.src=`assets/images/${index}.webp`;
+
+}
+
+document.getElementById("nextPhoto").onclick=()=>{
+
+albumIndex++;
+
+if(albumIndex>TOTAL_IMAGES){
+
+albumIndex=1;
+
+}
+
+loadAlbum();
+
+};
+
+document.getElementById("prevPhoto").onclick=()=>{
+
+albumIndex--;
+
+if(albumIndex<1){
+
+albumIndex=TOTAL_IMAGES;
+
+}
+
+loadAlbum();
+
 };
 
 loadAlbum();
+
+/*=========================================
+LIGHTBOX
+=========================================*/
+
+const lightbox=document.getElementById("lightbox");
+
+const lightboxImg=document.getElementById("lightboxImg");
+
+const closeLightbox=document.getElementById("closeLightbox");
+
+albumImage.addEventListener("click",()=>{
+
+lightbox.style.display="flex";
+
+lightboxImg.src=albumImage.src;
+
+});
+
+closeLightbox.addEventListener("click",()=>{
+
+lightbox.style.display="none";
+
+});
+
+lightbox.addEventListener("click",(e)=>{
+
+if(e.target===lightbox){
+
+lightbox.style.display="none";
+
+}
+
+});
+
+/*=========================================
+SWIPE
+=========================================*/
+
+let startX=0;
+
+albumImage.addEventListener("touchstart",(e)=>{
+
+startX=e.touches[0].clientX;
+
+});
+
+albumImage.addEventListener("touchend",(e)=>{
+
+let endX=e.changedTouches[0].clientX;
+
+if(startX-endX>60){
+
+document.getElementById("nextPhoto").click();
+
+}
+
+if(endX-startX>60){
+
+document.getElementById("prevPhoto").click();
+
+}
+
+});
 
 /* ===========================
    END
