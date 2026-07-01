@@ -267,6 +267,151 @@ star.remove();
 
 setInterval(createStar,1800);
 
+/*=========================================
+FLOWER TRANSITION
+=========================================*/
+
+const revealSections=document.querySelectorAll(".reveal");
+
+const observer=new IntersectionObserver((entries)=>{
+
+entries.forEach(entry=>{
+
+if(entry.isIntersecting){
+
+entry.target.classList.add("show");
+
+createFlowers();
+
+}
+
+});
+
+},{
+threshold:.3
+});
+
+revealSections.forEach(section=>{
+
+observer.observe(section);
+
+});
+
+/*=========================================
+FLOWER
+=========================================*/
+
+function createFlowers(){
+
+for(let i=0;i<12;i++){
+
+const flower=document.createElement("img");
+
+flower.src="assets/images/flower.png";
+
+flower.className="flower";
+
+flower.style.left=(window.innerWidth/2)+"px";
+
+flower.style.top=(window.innerHeight/2)+"px";
+
+flower.style.setProperty("--x",(Math.random()*500-250)+"px");
+
+flower.style.setProperty("--y",(Math.random()*400-200)+"px");
+
+flower.style.transform=`rotate(${Math.random()*360}deg)`;
+
+document.body.appendChild(flower);
+
+setTimeout(()=>{
+
+flower.remove();
+
+},1600);
+
+}
+
+}
+
 /* ===========================
    END
 =========================== */
+/*=========================================
+FLOWER BURST V2
+=========================================*/
+
+const revealItems=document.querySelectorAll(".reveal");
+
+const revealObserver=new IntersectionObserver((entries)=>{
+
+entries.forEach(entry=>{
+
+if(entry.isIntersecting){
+
+entry.target.classList.add("show");
+
+burstFlowers(entry.target);
+
+revealObserver.unobserve(entry.target);
+
+}
+
+});
+
+},{
+threshold:.35
+});
+
+revealItems.forEach(item=>{
+
+revealObserver.observe(item);
+
+});
+
+function burstFlowers(target){
+
+const rect=target.getBoundingClientRect();
+
+const centerX=rect.left+rect.width/2;
+
+const centerY=rect.top+rect.height/2;
+
+for(let i=0;i<18;i++){
+
+const flower=document.createElement("img");
+
+flower.src="assets/images/flower.png";
+
+flower.className="flower";
+
+flower.style.left=centerX+"px";
+
+flower.style.top=centerY+"px";
+
+const angle=(Math.PI*2/18)*i;
+
+const distance=120+Math.random()*80;
+
+flower.style.setProperty("--x",
+
+`${Math.cos(angle)*distance}px`);
+
+flower.style.setProperty("--y",
+
+`${Math.sin(angle)*distance}px`);
+
+flower.style.setProperty("--r",
+
+`${Math.random()*720-360}deg`);
+
+document.body.appendChild(flower);
+
+setTimeout(()=>{
+
+flower.remove();
+
+},1500);
+
+}
+
+}

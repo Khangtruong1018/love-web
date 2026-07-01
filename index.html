@@ -160,9 +160,9 @@
 <!-- MUSIC PLAYER -->
 <!-- ========================================= -->
 
-<section class="music-player"  id="music">
+<section class="music-player reveal" id="music">
 
-    <h2>🎵 Nhạc của chúng mình</h2>
+    <h2>🎵 Mời em chọn nhạc</h2>
 
     <div class="music-box">
         <!-- DISC -->
@@ -223,11 +223,11 @@
 
         <p id="letterText">
 
-            Cảm ơn em vì đã xuất hiện trong cuộc đời anh.<br><br>
+            Cảm ơn em vì đã xuất hiện trong cuộc đời Khang.<br><br>
 
             Có những ngày rất bình thường, nhưng chỉ cần có em thì mọi thứ đều trở nên đặc biệt hơn.<br><br>
 
-            Anh không hứa sẽ hoàn hảo, nhưng anh hứa sẽ luôn cố gắng trở thành người tốt hơn vì em.<br><br>
+            Khang không hứa sẽ hoàn hảo, nhưng Khang hứa sẽ luôn cố gắng trở thành người tốt hơn vì em.<br><br>
 
             Hy vọng rằng sau này, chúng ta vẫn sẽ cùng nhau đi qua thật nhiều mùa xuân, mùa hạ, mùa thu và mùa đông nữa. ❤️<br><br>
 
@@ -243,43 +243,64 @@
 <!-- GALLERY -->
 <!-- ========================================= -->
 
-<section class="gallery">
+<!-- ========================================= -->
+<!-- LOVE ALBUM -->
+<!-- ========================================= -->
 
-    <h2>📸 Những Khoảnh Khắc</h2>
+<section class="album reveal" id="gallery">
 
-    <p>Mỗi bức ảnh là một kỷ niệm đẹp ❤️</p>
+    <h2>📖 Album ❤️ </h2>
 
-    <div class="gallery-grid">
+    <p class="album-sub">
 
-        <div class="gallery-item">
-            <img src="assets/images/imgaes2.jpg">
-            <span>❤️</span>
+        Những ảnh của vợ yêu ❤️
+
+    </p>
+
+    <div class="album-container">
+
+        <button id="prevPhoto" class="album-btn">
+
+            ❮
+
+        </button>
+
+        <div class="album-card">
+
+            <img
+                id="albumImage"
+                src="assets/images/1.jpg"
+                alt="Album">
+
+            <h3 id="albumTitle">
+
+                Tình yêu nhỏ❤️
+
+            </h3>
+
+            <p id="albumDesc">
+
+                Đây là nơi mình sẽ ghi chú cho từng bức ảnh.
+
+            </p>
+
+            <div class="album-footer">
+
+                <span id="albumPage">
+
+                    1 / 26
+
+                </span>
+
+            </div>
+
         </div>
 
-        <div class="gallery-item">
-            <img src="assets/images/imgaes3.jpg">
-            <span>❤️</span>
-        </div>
+        <button id="nextPhoto" class="album-btn">
 
-        <div class="gallery-item">
-            <img src="assets/images/imgaes4.jpg">
-            <span>❤️</span>
-        </div>
+            ❯
 
-        <div class="gallery-item">
-            <img src="assets/images/imgaes5.jpg">
-            <span>❤️</span>
-        </div>
-
-        <div class="gallery-item">
-            <img src="assets/images/imgaes6.jpg">
-            <span>❤️</span>
-        </div>
-
-        <div class="gallery-item">
-            <img src="assets/images/imgaes7.jpg">
-            <span>❤️</span>
-        </div>
+        </button>
 
     </div>
 
@@ -289,7 +310,7 @@
 <!-- COUNTDOWN -->
 <!-- ========================================= -->
 
-<section class="countdown">
+<section class="countdown reveal" id="countdown">
 
     <h2>❤️ Chúng mình đã bên nhau ❤️</h2>
 
@@ -337,52 +358,33 @@
 
 </section>
 
+<!-- ========================================= -->
+<!-- THANK YOU -->
+<!-- ========================================= -->
 
-<section class="memory">
+<section class="ending" id="ending">
 
-<h2>💖 Những Kỷ Niệm</h2>
+    <div class="ending-box">
 
-<div class="memory-card">
+        <div class="gift">🎁</div>
 
-<h3>❤️ Lần đầu gặp nhau</h3>
+        <h2>Em đã xem hết món quà này rồi</h2>
 
-<p>📅 18/01/2023</p>
+        <p>
+            Cảm ơn em vì đã dành thời gian để xem hết website này.<br><br>
 
-<p>
+            Hy vọng mỗi khi em mở lại,<br>
+            em sẽ nhớ rằng luôn có một người<br>
+            trân trọng từng khoảnh khắc bên em. ❤️
+        </p>
 
-Đó là ngày mà anh sẽ không bao giờ quên...
+        <button id="restartBtn">
 
-</p>
+            ❤️ Xem lại từ đầu
 
-</div>
+        </button>
 
-<div class="memory-card">
-
-<h3>🌸 Chuyến đi đầu tiên</h3>
-
-<p>📅 25/06/2023</p>
-
-<p>
-
-Một chuyến đi đầy tiếng cười và những bức ảnh đẹp.
-
-</p>
-
-</div>
-
-<div class="memory-card">
-
-<h3>🎂 Sinh nhật em</h3>
-
-<p>📅 20/11/2024</p>
-
-<p>
-
-Hy vọng sau này năm nào anh cũng được ở bên em.
-
-</p>
-
-</div>
+    </div>
 
 </section>
 
@@ -393,7 +395,7 @@ Hy vọng sau này năm nào anh cũng được ở bên em.
 
 <footer>
 
-<h2>❤️ Cảm ơn em đã đến bên anh ❤️</h2>
+<h2>❤️ Cảm ơn em đã đến bên Khang ❤️</h2>
 
 <p>
 

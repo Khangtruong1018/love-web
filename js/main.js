@@ -333,6 +333,89 @@ if(letter){
 
 }
 
+/*=========================================
+RESTART
+=========================================*/
+
+const restartBtn=document.getElementById("restartBtn");
+
+if(restartBtn){
+
+restartBtn.addEventListener("click",()=>{
+
+window.scrollTo({
+
+top:0,
+
+behavior:"smooth"
+
+});
+
+});
+
+}
+
+/* =========================================
+ALBUM V3 - 26 IMAGES
+========================================= */
+
+const albumData = [];
+
+for(let i=1;i<=26;i++){
+    albumData.push({
+        img:`assets/images/${i}.jpg`,
+        title:`Tấm số ${i} ❤️`,
+        desc:`Một khoảnh khắc của vợ yêu #${i}`
+    });
+}
+
+let albumIndex = 0;
+
+const albumImage = document.getElementById("albumImage");
+const albumTitle = document.getElementById("albumTitle");
+const albumDesc = document.getElementById("albumDesc");
+const albumPage = document.getElementById("albumPage");
+
+function loadAlbum(){
+
+    albumImage.style.opacity = 0;
+
+    setTimeout(()=>{
+
+        albumImage.src = albumData[albumIndex].img;
+        albumTitle.innerText = albumData[albumIndex].title;
+        albumDesc.innerText = albumData[albumIndex].desc;
+        albumPage.innerText = `${albumIndex+1} / 26`;
+
+        albumImage.style.opacity = 1;
+
+    },150);
+}
+
+document.getElementById("nextPhoto").onclick = () => {
+
+    albumIndex++;
+
+    if(albumIndex >= albumData.length){
+        albumIndex = 0;
+    }
+
+    loadAlbum();
+};
+
+document.getElementById("prevPhoto").onclick = () => {
+
+    albumIndex--;
+
+    if(albumIndex < 0){
+        albumIndex = albumData.length - 1;
+    }
+
+    loadAlbum();
+};
+
+loadAlbum();
+
 /* ===========================
    END
 =========================== */
