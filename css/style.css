@@ -1,0 +1,2086 @@
+/* ======================================================
+   LOVE WEBSITE V2
+   FILE: css/style.css
+   PART 1
+   ====================================================== */
+
+/* ==========================
+   RESET
+========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    font-family:'Poppins',sans-serif;
+
+    background:#ffd6e7;
+
+    color:#333;
+
+    overflow-x:hidden;
+
+}
+
+/* ==========================
+   ROOT COLOR
+========================== */
+
+:root{
+
+    --pink:#ff5fa2;
+
+    --pink-light:#ffd8ea;
+
+    --purple:#9d4edd;
+
+    --white:#ffffff;
+
+    --glass:rgba(255,255,255,.18);
+
+    --shadow:0 15px 35px rgba(0,0,0,.15);
+
+}
+
+/* ==========================
+   LOADING
+========================== */
+
+#loading{
+
+    position:fixed;
+
+    inset:0;
+
+    background:linear-gradient(
+        135deg,
+        #ff9ecf,
+        #ffc7df,
+        #fff
+    );
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    z-index:9999;
+
+}
+
+.loading-content{
+
+    width:380px;
+
+    text-align:center;
+
+}
+
+.loading-content h1{
+
+    margin-top:25px;
+
+    color:white;
+
+    font-size:28px;
+
+    font-weight:600;
+
+}
+
+.heart-loader{
+
+    font-size:90px;
+
+    animation:heartbeat 1s infinite;
+
+}
+
+.progress{
+
+    width:100%;
+
+    height:12px;
+
+    background:white;
+
+    border-radius:20px;
+
+    margin-top:30px;
+
+    overflow:hidden;
+
+}
+
+.progress-bar{
+
+    width:0;
+
+    height:100%;
+
+    background:linear-gradient(
+        90deg,
+        hotpink,
+        deeppink
+    );
+
+}
+
+/* ==========================
+   PASSWORD
+========================== */
+
+#passwordPage{
+
+    width:100%;
+
+    min-height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:
+
+    linear-gradient(
+        135deg,
+        #ffc0cb,
+        #ffe5ef,
+        white
+    );
+
+}
+
+.glass-box{
+
+    width:420px;
+
+    padding:45px;
+
+    border-radius:25px;
+
+    background:var(--glass);
+
+    backdrop-filter:blur(18px);
+
+    box-shadow:var(--shadow);
+
+    text-align:center;
+
+}
+
+.glass-box h2{
+
+    font-size:35px;
+
+    color:var(--pink);
+
+    margin-bottom:15px;
+
+}
+
+.glass-box p{
+
+    color:#666;
+
+    margin-bottom:30px;
+
+}
+
+.glass-box input{
+
+    width:100%;
+
+    height:55px;
+
+    border:none;
+
+    outline:none;
+
+    border-radius:15px;
+
+    padding-left:20px;
+
+    font-size:18px;
+
+    margin-bottom:20px;
+
+}
+
+.glass-box button{
+
+    width:100%;
+
+    height:55px;
+
+    border:none;
+
+    cursor:pointer;
+
+    border-radius:15px;
+
+    background:linear-gradient(
+        90deg,
+        hotpink,
+        deeppink
+    );
+
+    color:white;
+
+    font-size:18px;
+
+    transition:.35s;
+
+}
+
+.glass-box button:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:0 15px 30px rgba(255,20,147,.35);
+
+}
+
+#errorText{
+
+    display:block;
+
+    margin-top:18px;
+
+    color:red;
+
+}
+
+/* ==========================
+   WEBSITE
+========================== */
+
+#website{
+
+    display:none;
+
+}
+
+/* =========================================
+   HERO V2
+========================================= */
+
+.hero{
+
+    position:relative;
+
+    min-height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    overflow:hidden;
+
+    background:url("../assets/images/background.jpg");
+
+    background-size:cover;
+
+    background-position:center;
+
+}
+
+.hero-overlay{
+
+    position:absolute;
+
+    top:0;
+
+    left:0;
+
+    width:100%;
+
+    height:100%;
+
+    background:rgba(0,0,0,.45);
+
+}
+
+.hero-content{
+
+    position:relative;
+
+    z-index:2;
+
+    color:white;
+
+    padding:20px;
+
+}
+
+.hero-content h3{
+
+    font-size:24px;
+
+    margin-bottom:20px;
+
+    letter-spacing:2px;
+
+}
+
+.hero-content h1{
+
+    font-size:70px;
+
+    margin-bottom:20px;
+
+    line-height:1.3;
+
+}
+
+.hero-content h1 span{
+
+    color:#ff5fa2;
+
+}
+
+#randomQuote{
+
+    font-size:24px;
+
+    max-width:700px;
+
+    margin:auto;
+
+    line-height:1.8;
+
+    margin-bottom:35px;
+
+}
+
+#startBtn{
+
+    padding:15px 35px;
+
+    border:none;
+
+    border-radius:50px;
+
+    background:#ff5fa2;
+
+    color:white;
+
+    font-size:18px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+#startBtn:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:0 10px 30px rgba(255,95,162,.4);
+
+}
+@media(max-width:768px){
+
+.hero-content h1{
+
+    font-size:45px;
+
+}
+
+.hero-content h3{
+
+    font-size:18px;
+
+}
+
+#randomQuote{
+
+    font-size:18px;
+
+}
+
+}
+
+/* ======================================================
+   LOVE WEBSITE V2
+   FILE: css/style.css
+   PART 2
+   ======================================================*/
+
+/* ==========================
+   LOVE LETTER
+========================== */
+
+.love-letter{
+
+    padding:120px 8%;
+
+    background:#fff5fa;
+
+}
+
+.love-letter .container{
+
+    max-width:900px;
+
+    margin:auto;
+
+    padding:50px;
+
+    border-radius:25px;
+
+    background:white;
+
+    box-shadow:0 20px 40px rgba(0,0,0,.08);
+
+    text-align:center;
+
+}
+
+.love-letter h2{
+
+    font-size:42px;
+
+    color:var(--pink);
+
+    margin-bottom:30px;
+
+}
+
+.love-letter p{
+
+    font-size:20px;
+
+    line-height:2;
+
+    color:#555;
+
+}
+
+/* ==========================
+   GALLERY
+========================== */
+
+.gallery{
+
+    padding:120px 8%;
+
+    background:#ffeef5;
+
+}
+
+.gallery h2{
+
+    text-align:center;
+
+    font-size:42px;
+
+    color:var(--pink);
+
+    margin-bottom:60px;
+
+}
+
+.gallery-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+
+    gap:30px;
+
+}
+
+.card{
+
+    overflow:hidden;
+
+    border-radius:20px;
+
+    background:white;
+
+    box-shadow:0 15px 30px rgba(0,0,0,.1);
+
+    transition:.4s;
+
+}
+
+.card:hover{
+
+    transform:translateY(-10px);
+
+}
+
+.card img{
+
+    width:100%;
+
+    height:320px;
+
+    object-fit:cover;
+
+    transition:.5s;
+
+}
+
+.card:hover img{
+
+    transform:scale(1.08);
+
+}
+
+/* ==========================
+   COUNTDOWN
+========================== */
+
+.countdown{
+
+    padding:120px 8%;
+
+    background:white;
+
+}
+
+.countdown h2{
+
+    text-align:center;
+
+    color:var(--pink);
+
+    font-size:42px;
+
+    margin-bottom:60px;
+
+}
+
+.counter{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:30px;
+
+    flex-wrap:wrap;
+
+}
+
+.time-box{
+
+    width:160px;
+
+    height:160px;
+
+    border-radius:25px;
+
+    background:linear-gradient(
+        135deg,
+        #ff77b7,
+        #ff4d94
+    );
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    color:white;
+
+    box-shadow:0 15px 35px rgba(255,20,147,.25);
+
+}
+
+.time-box span{
+
+    font-size:48px;
+
+    font-weight:bold;
+
+}
+
+.time-box small{
+
+    margin-top:10px;
+
+    font-size:18px;
+
+}
+
+/* ==========================
+   MUSIC PLAYER
+========================== */
+
+.music-player{
+
+    padding:120px 8%;
+
+    text-align:center;
+
+    background:#fff4f8;
+
+}
+
+.music-player h2{
+
+    color:var(--pink);
+
+    font-size:42px;
+
+    margin-bottom:40px;
+
+}
+
+#musicButton{
+
+    width:260px;
+
+    height:65px;
+
+    border:none;
+
+    border-radius:60px;
+
+    cursor:pointer;
+
+    color:white;
+
+    font-size:20px;
+
+    background:linear-gradient(
+        90deg,
+        hotpink,
+        deeppink
+    );
+
+    transition:.35s;
+
+}
+
+#musicButton:hover{
+
+    transform:scale(1.05);
+
+    box-shadow:0 20px 40px rgba(255,20,147,.35);
+
+}
+
+#musicButton i{
+
+    margin-right:10px;
+
+}
+/* ======================================================
+   LOVE WEBSITE V2
+   FILE: css/style.css
+   PART 3
+====================================================== */
+
+/* ==========================
+   TIMELINE
+========================== */
+
+.timeline{
+
+    padding:120px 8%;
+
+    background:#ffffff;
+
+}
+
+.timeline h2{
+
+    text-align:center;
+
+    color:var(--pink);
+
+    font-size:42px;
+
+    margin-bottom:80px;
+
+}
+
+.timeline-item{
+
+    position:relative;
+
+    max-width:850px;
+
+    margin:40px auto;
+
+    padding:35px;
+
+    border-left:6px solid var(--pink);
+
+    background:white;
+
+    border-radius:20px;
+
+    box-shadow:0 15px 30px rgba(0,0,0,.08);
+
+    transition:.4s;
+
+}
+
+.timeline-item:hover{
+
+    transform:translateX(10px);
+
+}
+
+.timeline-item::before{
+
+    content:"❤";
+
+    position:absolute;
+
+    left:-18px;
+
+    top:35px;
+
+    width:30px;
+
+    height:30px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:white;
+
+    color:deeppink;
+
+    font-size:18px;
+
+}
+
+.timeline-item h3{
+
+    color:var(--pink);
+
+    margin-bottom:15px;
+
+    font-size:26px;
+
+}
+
+.timeline-item p{
+
+    line-height:1.8;
+
+    color:#666;
+
+}
+
+/* ==========================
+   FOOTER
+========================== */
+
+footer{
+
+    padding:80px 20px;
+
+    text-align:center;
+
+    background:linear-gradient(
+        135deg,
+        #ff5fa2,
+        #ff8fc3
+    );
+
+    color:white;
+
+}
+
+footer h2{
+
+    font-size:32px;
+
+    margin-bottom:15px;
+
+}
+
+footer p{
+
+    opacity:.9;
+
+}
+
+/* ==========================
+   BACK TO TOP
+========================== */
+
+#backTop{
+
+    position:fixed;
+
+    right:25px;
+
+    bottom:25px;
+
+    width:55px;
+
+    height:55px;
+
+    border:none;
+
+    border-radius:50%;
+
+    cursor:pointer;
+
+    color:white;
+
+    background:deeppink;
+
+    font-size:20px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    box-shadow:0 15px 30px rgba(0,0,0,.2);
+
+    transition:.3s;
+
+    z-index:999;
+
+}
+
+#backTop:hover{
+
+    transform:translateY(-5px);
+
+}
+
+/* ==========================
+   FLOATING HEART
+========================== */
+
+#heartContainer{
+
+    position:fixed;
+
+    inset:0;
+
+    pointer-events:none;
+
+    overflow:hidden;
+
+    z-index:1;
+
+}
+
+.heart{
+
+    position:absolute;
+
+    color:#ff4d94;
+
+    animation:heartFloat linear forwards;
+
+    opacity:.8;
+
+}
+
+/* ==========================
+   GLASS CARD
+========================== */
+
+.glass-card{
+
+    background:rgba(255,255,255,.18);
+
+    backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,.25);
+
+    border-radius:25px;
+
+    box-shadow:0 15px 35px rgba(0,0,0,.08);
+
+}
+
+/* ==========================
+   SECTION TITLE
+========================== */
+
+.section-title{
+
+    text-align:center;
+
+    font-size:46px;
+
+    color:var(--pink);
+
+    margin-bottom:60px;
+
+}
+
+/* ==========================
+   BUTTON
+========================== */
+
+.btn{
+
+    display:inline-block;
+
+    padding:18px 40px;
+
+    border-radius:50px;
+
+    background:linear-gradient(
+        90deg,
+        hotpink,
+        deeppink
+    );
+
+    color:white;
+
+    text-decoration:none;
+
+    transition:.35s;
+
+}
+
+.btn:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:0 20px 35px rgba(255,20,147,.3);
+
+}
+/* ======================================================
+   LOVE WEBSITE V2
+   FILE: css/style.css
+   PART 4
+====================================================== */
+
+/* ==========================
+   BODY BACKGROUND
+========================== */
+
+body{
+
+    background:
+    linear-gradient(
+        -45deg,
+        #ffd9e8,
+        #ffeef7,
+        #fff7fb,
+        #ffd0e6
+    );
+
+    background-size:400% 400%;
+
+    animation:bgMove 15s ease infinite;
+
+}
+
+/* ==========================
+   SECTION
+========================== */
+
+section{
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+/* ==========================
+   GLASS EFFECT
+========================== */
+
+.glass{
+
+    background:rgba(255,255,255,.18);
+
+    backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,.25);
+
+    border-radius:25px;
+
+    box-shadow:0 20px 40px rgba(0,0,0,.08);
+
+}
+
+/* ==========================
+   HERO TITLE
+========================== */
+
+.hero-content h1{
+
+    animation:fadeUp 1s ease;
+
+}
+
+.hero-content p{
+
+    animation:fadeUp 1.3s ease;
+
+}
+
+#startBtn{
+
+    animation:fadeUp 1.6s ease;
+
+}
+
+/* ==========================
+   FLOAT HEART
+========================== */
+
+.heart{
+
+    position:absolute;
+
+    color:#ff4d94;
+
+    animation:heartFloat linear forwards;
+
+    user-select:none;
+
+}
+
+/* ==========================
+   SAKURA
+========================== */
+
+.sakura{
+
+    position:absolute;
+
+    top:-30px;
+
+    color:#ffb7d5;
+
+    font-size:20px;
+
+    pointer-events:none;
+
+    animation:sakuraFall linear forwards;
+
+}
+
+/* ==========================
+   IMAGE EFFECT
+========================== */
+
+.card img{
+
+    transition:.5s;
+
+}
+
+.card:hover img{
+
+    transform:scale(1.08);
+
+    filter:brightness(1.05);
+
+}
+
+/* ==========================
+   CARD SHADOW
+========================== */
+
+.card:hover{
+
+    box-shadow:
+
+    0 30px 60px rgba(0,0,0,.15);
+
+}
+
+/* ==========================
+   TIMELINE EFFECT
+========================== */
+
+.timeline-item{
+
+    opacity:0;
+
+    transform:translateY(50px);
+
+}
+
+.timeline-item.show{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+    transition:.8s;
+
+}
+
+/* ==========================
+   BUTTON EFFECT
+========================== */
+
+button{
+
+    transition:.35s;
+
+}
+
+button:active{
+
+    transform:scale(.96);
+
+}
+
+/* ==========================
+   SCROLLBAR
+========================== */
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:white;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#ff5fa2;
+
+    border-radius:20px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+    background:#ff2e88;
+
+}
+
+/* ==========================
+   TEXT SELECTION
+========================== */
+
+::selection{
+
+    background:#ff5fa2;
+
+    color:white;
+
+}
+
+/* ==========================
+   HOVER EFFECT
+========================== */
+
+a{
+
+    transition:.3s;
+
+}
+
+a:hover{
+
+    color:#ff2e88;
+
+}
+/* ======================================================
+   LOVE WEBSITE V2
+   FILE: css/style.css
+   PART 5 (FINAL)
+====================================================== */
+
+/* ==========================
+   CONTAINER
+========================== */
+
+.container{
+
+    width:90%;
+
+    max-width:1200px;
+
+    margin:auto;
+
+}
+
+/* ==========================
+   IMAGE
+========================== */
+
+img{
+
+    display:block;
+
+    width:100%;
+
+}
+
+/* ==========================
+   TITLE
+========================== */
+
+h1,h2,h3,h4{
+
+    font-weight:700;
+
+}
+
+p{
+
+    line-height:1.8;
+
+}
+
+/* ==========================
+   SPACING
+========================== */
+
+.mt-1{margin-top:10px;}
+.mt-2{margin-top:20px;}
+.mt-3{margin-top:30px;}
+.mt-4{margin-top:40px;}
+.mt-5{margin-top:50px;}
+
+.mb-1{margin-bottom:10px;}
+.mb-2{margin-bottom:20px;}
+.mb-3{margin-bottom:30px;}
+.mb-4{margin-bottom:40px;}
+.mb-5{margin-bottom:50px;}
+
+/* ==========================
+   FLEX
+========================== */
+
+.flex{
+
+    display:flex;
+
+}
+
+.flex-center{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+.flex-between{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+}
+
+/* ==========================
+   GRID
+========================== */
+
+.grid-2{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:30px;
+
+}
+
+.grid-3{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:30px;
+
+}
+
+/* ==========================
+   ANIMATION
+========================== */
+
+@keyframes heartbeat{
+
+    0%{
+
+        transform:scale(1);
+
+    }
+
+    50%{
+
+        transform:scale(1.25);
+
+    }
+
+    100%{
+
+        transform:scale(1);
+
+    }
+
+}
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(50px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+@keyframes bgMove{
+
+    0%{
+
+        background-position:0% 50%;
+
+    }
+
+    50%{
+
+        background-position:100% 50%;
+
+    }
+
+    100%{
+
+        background-position:0% 50%;
+
+    }
+
+}
+
+@keyframes heartFloat{
+
+    from{
+
+        transform:translateY(0) scale(.8);
+
+        opacity:1;
+
+    }
+
+    to{
+
+        transform:translateY(-100vh) scale(1.8);
+
+        opacity:0;
+
+    }
+
+}
+
+@keyframes sakuraFall{
+
+    from{
+
+        transform:translateY(-30px) rotate(0deg);
+
+        opacity:1;
+
+    }
+
+    to{
+
+        transform:translateY(110vh) rotate(720deg);
+
+        opacity:0;
+
+    }
+
+}
+
+/* ==========================
+   RESPONSIVE PREVIEW
+========================== */
+
+@media(max-width:992px){
+
+.hero-content h1{
+
+font-size:45px;
+
+}
+
+.hero-content p{
+
+font-size:20px;
+
+}
+
+.grid-2{
+
+grid-template-columns:1fr;
+
+}
+
+.grid-3{
+
+grid-template-columns:1fr;
+
+}
+
+}
+
+@media(max-width:768px){
+
+.glass-box{
+
+width:92%;
+
+padding:30px;
+
+}
+
+.time-box{
+
+width:130px;
+
+height:130px;
+
+}
+
+.hero-content h1{
+
+font-size:34px;
+
+}
+
+.hero-content p{
+
+font-size:17px;
+
+}
+
+#startBtn{
+
+width:180px;
+
+height:55px;
+
+}
+
+}
+
+@media(max-width:480px){
+
+.timeline-item{
+
+padding:20px;
+
+}
+
+footer h2{
+
+font-size:24px;
+
+}
+
+.countdown h2,
+
+.gallery h2,
+
+.timeline h2,
+
+.music-player h2,
+
+.love-letter h2{
+
+font-size:30px;
+
+}
+
+}
+
+/* ==========================
+   END
+========================== */
+.music-control{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:15px;
+
+    margin-top:25px;
+
+}
+
+.music-control button{
+
+    padding:12px 22px;
+
+    border:none;
+
+    border-radius:12px;
+
+    cursor:pointer;
+
+    background:#ff5fa2;
+
+    color:white;
+
+    font-size:18px;
+
+}
+
+#songName{
+
+    margin-top:20px;
+
+    font-size:20px;
+
+    font-weight:bold;
+
+    color:#ff5fa2;
+
+}
+/* =========================================
+   FADE UP
+========================================= */
+
+.fade-up{
+
+    opacity:0;
+
+    transform:translateY(40px);
+
+    transition:all .8s ease;
+
+}
+
+.fade-up.show{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+/* =========================================
+   MUSIC PLAYER V2
+========================================= */
+
+.music-player{
+
+    padding:90px 20px;
+
+    text-align:center;
+
+}
+
+.music-box{
+
+    max-width:650px;
+
+    margin:auto;
+
+    background:white;
+
+    padding:35px;
+
+    border-radius:25px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.1);
+
+}
+
+.music-info h3{
+
+    color:#ff5fa2;
+
+    font-size:28px;
+
+}
+
+.music-info span{
+
+    color:#888;
+
+}
+
+.progress{
+
+    width:100%;
+
+    height:8px;
+
+    background:#eee;
+
+    border-radius:50px;
+
+    overflow:hidden;
+
+    margin:25px 0;
+
+}
+
+#progressBar{
+
+    width:0%;
+
+    height:100%;
+
+    background:#ff5fa2;
+
+    transition:.2s;
+
+}
+
+.music-control{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:20px;
+
+}
+
+.music-control button{
+
+    width:60px;
+
+    height:60px;
+
+    border:none;
+
+    border-radius:50%;
+
+    cursor:pointer;
+
+    background:#ff5fa2;
+
+    color:white;
+
+    font-size:22px;
+
+    transition:.3s;
+
+}
+
+.music-control button:hover{
+
+    transform:scale(1.08);
+
+}
+/* =========================================
+   VINYL DISC
+========================================= */
+
+.music-disc{
+
+display:flex;
+
+justify-content:center;
+
+margin-bottom:25px;
+
+}
+
+.music-disc img{
+
+width:150px;
+
+height:150px;
+
+border-radius:50%;
+
+box-shadow:0 10px 25px rgba(0,0,0,.2);
+
+animation:spin 6s linear infinite;
+
+animation-play-state:paused;
+
+}
+
+.music-disc img.playing{
+
+animation-play-state:running;
+
+}
+
+@keyframes spin{
+
+from{
+
+transform:rotate(0deg);
+
+}
+
+to{
+
+transform:rotate(360deg);
+
+}
+
+}
+/* =========================================
+   COUNTDOWN V2
+========================================= */
+
+.countdown{
+
+padding:90px 20px;
+
+text-align:center;
+
+}
+
+.count-text{
+
+margin:20px 0 40px;
+
+font-size:20px;
+
+color:#666;
+
+}
+
+.counter-box{
+
+display:flex;
+
+justify-content:center;
+
+gap:25px;
+
+flex-wrap:wrap;
+
+}
+
+.counter-card{
+
+width:150px;
+
+padding:30px 20px;
+
+background:white;
+
+border-radius:25px;
+
+box-shadow:0 10px 30px rgba(0,0,0,.08);
+
+transition:.3s;
+
+}
+
+.counter-card:hover{
+
+transform:translateY(-8px);
+
+}
+
+.counter-card h1{
+
+font-size:55px;
+
+color:#ff5fa2;
+
+margin-bottom:10px;
+
+}
+
+.counter-card span{
+
+font-size:18px;
+
+color:#666;
+
+}
+@media(max-width:768px){
+
+.counter-card{
+
+width:120px;
+
+padding:20px;
+
+}
+
+.counter-card h1{
+
+font-size:38px;
+
+}
+
+}/* =========================================
+   LOVE LETTER
+========================================= */
+
+.letter{
+
+padding:100px 20px;
+
+text-align:center;
+
+background:#fff8f6;
+
+}
+
+.letter h2{
+
+margin-bottom:40px;
+
+font-size:40px;
+
+color:#ff5fa2;
+
+}
+
+.letter-paper{
+
+max-width:850px;
+
+margin:auto;
+
+background:#fffdf8;
+
+padding:50px;
+
+border-radius:20px;
+
+box-shadow:0 15px 40px rgba(0,0,0,.08);
+
+text-align:left;
+
+position:relative;
+
+}
+
+#letterText{
+
+font-size:20px;
+
+line-height:2;
+
+color:#555;
+
+}
+@media(max-width:768px){
+
+.letter-paper{
+
+padding:30px;
+
+}
+
+#letterText{
+
+font-size:17px;
+
+line-height:1.8;
+
+}
+
+}
+/*=========================================
+GALLERY
+=========================================*/
+
+.gallery{
+
+padding:100px 20px;
+
+text-align:center;
+
+}
+
+.gallery-grid{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+
+gap:25px;
+
+margin-top:40px;
+
+}
+
+.gallery-item{
+
+overflow:hidden;
+
+border-radius:20px;
+
+background:white;
+
+box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+transition:.35s;
+
+}
+
+.gallery-item:hover{
+
+transform:translateY(-8px);
+
+}
+
+.gallery-item img{
+
+width:100%;
+
+height:320px;
+
+object-fit:cover;
+
+transition:.5s;
+
+}
+
+.gallery-item:hover img{
+
+transform:scale(1.08);
+
+}
+
+.gallery-item span{
+
+display:block;
+
+padding:18px;
+
+font-size:18px;
+
+font-weight:600;
+
+}
+/*=========================================
+MEMORY
+=========================================*/
+
+.memory{
+
+padding:100px 20px;
+
+background:#fff8f8;
+
+}
+
+.memory h2{
+
+text-align:center;
+
+margin-bottom:40px;
+
+}
+
+.memory-card{
+
+max-width:800px;
+
+margin:30px auto;
+
+padding:35px;
+
+background:white;
+
+border-radius:20px;
+
+box-shadow:0 10px 30px rgba(0,0,0,.08);
+
+transition:.3s;
+
+}
+
+.memory-card:hover{
+
+transform:translateY(-8px);
+
+}
+
+.memory-card h3{
+
+color:#ff5fa2;
+
+margin-bottom:15px;
+
+}
+
+.memory-card p{
+
+line-height:1.8;
+
+}
+/*=========================================
+FOOTER
+=========================================*/
+
+footer{
+
+padding:60px 20px;
+
+text-align:center;
+
+background:#ff5fa2;
+
+color:white;
+
+}
+
+footer h2{
+
+margin-bottom:15px;
+
+}
+
+footer p{
+
+margin:10px 0;
+
+opacity:.9;
+
+}
